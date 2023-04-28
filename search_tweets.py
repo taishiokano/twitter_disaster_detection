@@ -7,6 +7,7 @@ config_ini = configparser.ConfigParser()
 config_ini.read('config.ini', encoding='utf-8')
 
 # API authentification
+# You need to prepare your "config.ini" to get the API authentification
 BEARER_TOKEN = config_ini['DEFAULT']['bearer_token']
 auth = tweepy.OAuth2BearerHandler(BEARER_TOKEN)
 api = tweepy.API(auth, wait_on_rate_limit=True)
@@ -33,7 +34,7 @@ def get_tweets(search_query):
     df = pd.DataFrame(tw_data,columns=labels)
 
     # Output as csv file
-    file_name='tw_data.csv'
+    file_name='tweets.csv'
     df.to_csv(file_name,encoding='utf-8-sig',index=False)
 
 if __name__ == "__main__":
