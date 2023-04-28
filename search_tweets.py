@@ -34,8 +34,8 @@ def get_tweets(search_query):
     df = pd.DataFrame(tw_data,columns=labels)
 
     # Output as csv file
-    file_name='tweets.csv'
-    df.to_csv(file_name,encoding='utf-8-sig',index=False)
+    file_path_name='./csv/tweets.csv'
+    df.to_csv(file_path_name,encoding='utf-8-sig',index=False)
 
 if __name__ == "__main__":
     # Reference (Search Tweets): https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query

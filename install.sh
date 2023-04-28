@@ -28,12 +28,7 @@ pip install -r requirements.txt
 echo -e "Install is complete."
 
 # 3. Setting up folders
-if [[ ! -d ./serial/csv ]]; then
-    echo -e "\t--Create CSV file in serial folder."
-    mkdir ./serial/csv
-fi
-
-if [[ ! -d ./cuda/csv ]]; then
-    echo -e "\t--Create CSV file in cuda folder."
-    mkdir ./cuda/csv
+if [[ ! -d ./csv ]]; then
+    echo -e "\t--Create CSV file."
+    mkdir ./csv
 fi
