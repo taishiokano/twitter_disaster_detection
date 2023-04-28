@@ -1,4 +1,4 @@
-<font color="red"> **IN PROGRESS** </font>
+**IN PROGRESS**
 
 # Best Classifiers for Classifying Real Disaster Tweets from Fake Disaster Tweets
 ## Brief Explanation
