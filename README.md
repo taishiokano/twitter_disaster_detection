@@ -11,6 +11,12 @@ bash install.sh
 source env/bin/activate
 ```
 
+## Dataset
+Please use `data/cleaned-tokenized-train-tweets.csv` for doing further task.
+We documented things such as code for cleaning and preprocessing data in `01-preprocessing.ipynb`
+
+
+
 ### Search tweets
 ``` py
 python search_tweets.py
