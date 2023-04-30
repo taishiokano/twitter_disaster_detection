@@ -28,7 +28,7 @@ pip install -r requirements.txt
 echo -e "Install is complete."
 
 # 3. Setting up folders
-if [[ ! -d ./csv ]]; then
+if [[ ! -d ./data/from_twitter_api ]]; then
     echo -e "\t--Create CSV file."
-    mkdir ./csv
+    mkdir ./data/from_twitter_api
 fi

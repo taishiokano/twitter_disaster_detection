@@ -34,7 +34,7 @@ def get_tweets(search_query):
     df = pd.DataFrame(tw_data,columns=labels)
 
     # Output as csv file
-    file_path_name='./csv/tweets.csv'
+    file_path_name='./data/from_twitter_api/tweet_samples.csv'
     df.to_csv(file_path_name,encoding='utf-8-sig',index=False)
 
 if __name__ == "__main__":
