@@ -20,9 +20,8 @@ api = tweepy.API(auth, wait_on_rate_limit=True)
 # auth = tweepy.OAuthHandler(API_KEY, API_SECRET)
 # auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
-def get_tweets(search_query):
+def get_tweets(search_query, item_number):
     # Get tweets by query
-    item_number = 10 # num of tweets to get
     tweets = tweepy.Cursor(api.search_tweets, q=search_query, tweet_mode='extended', result_type="mixed", lang='en').items(item_number)
 
     # Make a table
@@ -38,6 +37,10 @@ def get_tweets(search_query):
     df.to_csv(file_path_name,encoding='utf-8-sig',index=False)
 
 if __name__ == "__main__":
-    # Reference (Search Tweets): https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query
-    search_query = 'earthquake OR (fire alarm) OR accident' # We can specify search conditions by adding queries like "min_faves:200"
-    get_tweets(search_query)
+    # # Reference (Search Tweets): https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query
+    # search_query = 'earthquake OR (fire alarm) OR flood OR hurricane -filter:retweets' # We can specify search conditions by adding queries like "min_faves:200"
+    # # We need to modify this query because (fire alarm) doesn't filter only consecutive "fire alarm" but also filters tweets containing "fire" and "alarm" discontinuously.
+    # # Removing retweets because there is a limitation about the number of words in the text field for retweets.
+    search_query = 'ablaze -filter:retweets' # We can specify search conditions by adding queries like "min_faves:200"
+    item_number = 20 # num of tweets to get
+    get_tweets(search_query, item_number)
