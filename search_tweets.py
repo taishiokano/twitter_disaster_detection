@@ -34,13 +34,13 @@ def get_tweets(search_query, item_number):
 
     # Output as csv file
     file_path_name='./data/from_twitter_api/tweet_samples.csv'
-    df.to_csv(file_path_name,encoding='utf-8-sig',index=False)
+    df.to_csv(file_path_name,encoding='utf-8-sig', mode='a', index=False, header=False)
 
 if __name__ == "__main__":
     # # Reference (Search Tweets): https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query
     # search_query = 'earthquake OR (fire alarm) OR flood OR hurricane -filter:retweets' # We can specify search conditions by adding queries like "min_faves:200"
     # # We need to modify this query because (fire alarm) doesn't filter only consecutive "fire alarm" but also filters tweets containing "fire" and "alarm" discontinuously.
     # # Removing retweets because there is a limitation about the number of words in the text field for retweets.
-    search_query = 'ablaze -filter:retweets' # We can specify search conditions by adding queries like "min_faves:200"
+    search_query = 'suicide -filter:retweets' # We can specify search conditions by adding queries like "min_faves:200"
     item_number = 20 # num of tweets to get
     get_tweets(search_query, item_number)
